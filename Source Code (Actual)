@@ -87,10 +87,15 @@ sub Exponent {
   print "Input number\n";
   my $Number1 = <STDIN>;
   chomp $Number1;
+  if ($Number1 > -1) {
   my $Answer = sqrt$Number1;
   chomp $Answer;
   print "The square route of $Number1 = $Answer\n";
   &End;
+ } else {
+  print "Square roots must be greater then -1";
+  &End;
+ }
  }
  
  sub End {
