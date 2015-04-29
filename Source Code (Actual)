@@ -81,7 +81,23 @@ sub Exponent {
   my $Answer = $Number1 ** $Power;
   chomp $Answer;
   print "$Number1 to the power of $Power = $Answer\n";
+  &End;
  }
+ sub Sqrt {
+  print "Input number\n";
+  my $Number1 = <STDIN>;
+  chomp $Number1;
+  my $Answer = sqrt$Number1;
+  chomp $Answer;
+  print "The square route of $Number1 = $Answer\n";
+  &End;
+ }
+ 
+ sub End {
+  system("pause");
+  &Main;
+ }
+ 
 sub Basic {
  system("cls");
 for ( ; ; ) {
@@ -109,14 +125,16 @@ for ( ; ; ) {
 sub Main {
  system("cls");
  print "Welcome to Simple Text-Based Calculator, or the SiTe BaCal\n";
- print "Version 1.4.3\n";
- print "Do you wish to do Basic Math (1) or Exponetry (2)?\n";
+ print "Version 1.5.1\n";
+ print "Do you wish to do Basic Math (1), Exponetry (2), or Square roots (3)?\n";
  my $MenuChoice = <>;
  chomp $MenuChoice;
  if ($MenuChoice == 1) {
   &Basic;
   } elsif ($MenuChoice == 2) {
    &Exponent;
+  } elsif ($MenuChoice == 3) {
+   &Sqrt;
  } else {
   print "That is not an option.\n";
  }
