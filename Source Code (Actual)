@@ -93,7 +93,7 @@ sub Exponent {
   print "The square route of $Number1 = $Answer\n";
   &End;
  } else {
-  print "Square roots must be greater then -1";
+  print "Square roots must be greater then -1\n";
   &End;
  }
  }
@@ -130,7 +130,7 @@ for ( ; ; ) {
 sub Main {
  system("cls");
  print "Welcome to Simple Text-Based Calculator, or the SiTe BaCal\n";
- print "Version 1.5.1\n";
+ print "Version 1.5.2\n";
  print "Do you wish to do Basic Math (1), Exponetry (2), or Square roots (3)?\n";
  my $MenuChoice = <>;
  chomp $MenuChoice;
