@@ -54,10 +54,14 @@ sub Multiply {
   print "Input second number\n";
   my $Number2 = <STDIN>;
   chomp $Number2;
+  if ($Number2 == 0) {
+   print "Err 01: Divide by zero\n"
+  } else {
   my $Answer = $Number1 / $Number2;
   chomp $Answer;
   print "$Number1 / $Number2 = $Answer\n";
  }
+}
 
 sub Subtract {
   print "Input first number\n";
@@ -94,12 +98,11 @@ sub Exponent {
   my $Answer = sqrt$Number1;
   chomp $Answer;
   print "The square route of $Number1 = $Answer\n";
-  &End;
  } else {
   print "Square roots must be non-negative and numeric in value.\n";
+ }
   system("pause");
   &ExponentMenu;
- }
  }
  
  sub End {
@@ -156,7 +159,7 @@ sub ExponentMenu {
 sub Main {
  system("cls");
  print "Welcome to Simple Text-Based Calculator, or the SiTe BaCal\n";
- print "Version 1.6.0\n";
+ print "Version 1.6.3\n";
  print "Do you wish to do Basic Math (1), Exponetry (2), or  Quit (3)?\n";
  my $MenuChoice = <>;
  chomp $MenuChoice;
