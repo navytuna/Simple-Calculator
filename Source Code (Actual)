@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use vars;
 
- #Simple Text Based calculator is a simple PERL Calculator
+ #   Simple Text Based calculator is a simple PERL Calculator
  #   Copyright (C) 2015  Charles Hildebrandt
  #   This program is free software: you can redistribute it and/or modify
  #   it under the terms of the GNU General Public License as published by
@@ -72,6 +72,7 @@ sub Subtract {
  }
 
 sub Exponent {
+  system("cls");
   print "Input number\n";
   my $Number1 = <STDIN>;
   chomp $Number1;
@@ -81,25 +82,27 @@ sub Exponent {
   my $Answer = $Number1 ** $Power;
   chomp $Answer;
   print "$Number1 to the power of $Power = $Answer\n";
-  &End;
+  system("pause");
+  &ExponentMenu;
  }
  sub Sqrt {
+  system("cls");
   print "Input number\n";
   my $Number1 = <STDIN>;
   chomp $Number1;
-  if ($Number1 > -1) {
+  if ($Number1 > 0) {
   my $Answer = sqrt$Number1;
   chomp $Answer;
   print "The square route of $Number1 = $Answer\n";
   &End;
  } else {
-  print "Square roots must be greater then -1\n";
-  &End;
+  print "Square roots must be non-negative and numeric in value.\n";
+  system("pause");
+  &ExponentMenu;
  }
  }
  
  sub End {
-  system("pause");
   &Main;
  }
  
@@ -127,19 +130,42 @@ for ( ; ; ) {
 }
 }
 
+
+
+sub ExponentMenu {
+ system("cls");
+ for( ; ; ) {
+  print "Would you like to Square root (1), find a number's nth power (2), or Quit to main menu (3)?\n";
+  my $ExMenu = <>;
+  chomp $ExMenu;
+  if ($ExMenu == 1) {
+   &Sqrt;
+  } elsif ($ExMenu == 2) {
+   &Exponent;
+  } elsif ($ExMenu == 3) {
+   &End
+  } else {
+   print "That is not an option.\n";
+   system("pause");
+   system("cls");
+}
+}
+}
+
+
 sub Main {
  system("cls");
  print "Welcome to Simple Text-Based Calculator, or the SiTe BaCal\n";
- print "Version 1.5.2\n";
- print "Do you wish to do Basic Math (1), Exponetry (2), or Square roots (3)?\n";
+ print "Version 1.6.0\n";
+ print "Do you wish to do Basic Math (1), Exponetry (2), or  Quit (3)?\n";
  my $MenuChoice = <>;
  chomp $MenuChoice;
  if ($MenuChoice == 1) {
   &Basic;
   } elsif ($MenuChoice == 2) {
-   &Exponent;
+   &ExponentMenu;
   } elsif ($MenuChoice == 3) {
-   &Sqrt;
+   exit;
  } else {
   print "That is not an option.\n";
  }
