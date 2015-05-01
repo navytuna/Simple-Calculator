@@ -23,10 +23,10 @@ use warnings;
 
  sub Add {
   print "Input first number\n";
-  my $Number1 = <STDIN>;
+  my $Number1 = <>;
   chomp $Number1;
   print "Input second number\n";
-  my $Number2 = <STDIN>;
+  my $Number2 = <>;
   chomp $Number2;
   my $Answer = $Number1 + $Number2;
   chomp $Answer;
@@ -36,10 +36,10 @@ use warnings;
 
 sub Multiply {
   print "Input first number\n";
-  my $Number1 = <STDIN>;
+  my $Number1 = <>;
   chomp $Number1;
   print "Input second number\n";
-  my $Number2 = <STDIN>;
+  my $Number2 = <>;
   chomp $Number2;
   my $Answer = $Number1 * $Number2;
   chomp $Answer;
@@ -48,10 +48,10 @@ sub Multiply {
  
  sub Divide {
   print "Input first number\n";
-  my $Number1 = <STDIN>;
+  my $Number1 = <>;
   chomp $Number1;
   print "Input second number\n";
-  my $Number2 = <STDIN>;
+  my $Number2 = <>;
   chomp $Number2;
   if ($Number2 == 0) {
    print "Err 01: Divide by zero\n"
@@ -64,10 +64,10 @@ sub Multiply {
 
 sub Subtract {
   print "Input first number\n";
-  my $Number1 = <STDIN>;
+  my $Number1 = <>;
   chomp $Number1;
   print "Input second number\n";
-  my $Number2 = <STDIN>;
+  my $Number2 = <>;
   chomp $Number2;
   my $Answer = $Number1 - $Number2;
   chomp $Answer;
@@ -77,10 +77,10 @@ sub Subtract {
 sub Exponent {
   system("cls");
   print "Input number\n";
-  my $Number1 = <STDIN>;
+  my $Number1 = <>;
   chomp $Number1;
   print "Input power\n";
-  my $Power = <STDIN>;
+  my $Power = <>;
   chomp $Power;
   my $Answer = $Number1 ** $Power;
   chomp $Answer;
@@ -91,7 +91,7 @@ sub Exponent {
  sub Sqrt {
   system("cls");
   print "Input number\n";
-  my $Number1 = <STDIN>;
+  my $Number1 = <>;
   chomp $Number1;
   if ($Number1 >= 1) {
   my $Answer = sqrt$Number1;
@@ -127,7 +127,7 @@ sub Basic {
  system("cls");
 for ( ; ; ) {
  print "Would you want to Add (1), Subtract (2), Multiply (3), Divide (4), or quit to main menu (5)?\n";
- my $Choice = <STDIN>;
+ my $Choice = <>;
  chomp $Choice;
  if ($Choice == 1) {
    &Add;
@@ -175,7 +175,7 @@ sub ExponentMenu {
 sub Main {
  system("cls");
  print "Welcome to Simple Text-Based Calculator, or the SiTe BaCal\n";
- print "Version 1.7.2\n";
+ print "Version 1.7.3\n";
  print "Do you wish to do Basic Math (1), Exponetry (2), or  Quit (3)?\n";
  my $MenuChoice = <>;
  chomp $MenuChoice;
