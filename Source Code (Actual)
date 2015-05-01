@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-use vars;
 
  #   Simple Text Based calculator is a simple PERL Calculator
  #   Copyright (C) 2015  Charles Hildebrandt
@@ -105,6 +104,20 @@ sub Exponent {
   &ExponentMenu;
  }
  
+ sub Cbrt {
+  system("cls");
+  print "Input number\n";
+  my $Number1 = <>;
+  chomp $Number1;
+  if ($Number1 >= 0) {
+   my $Answer == $Number1 ** (1/3);
+  chomp $Answer;
+  print "The cube root of $Number1 = $Answer\n"; 
+ } else {
+  print "Err 01: The input needs to be positive and numeric in value\n";
+ }
+ &ExponentMenu;
+}
  sub End {
   &Main;
  }
@@ -138,7 +151,7 @@ for ( ; ; ) {
 sub ExponentMenu {
  system("cls");
  for( ; ; ) {
-  print "Would you like to Square root (1), find a number's nth power (2), or Quit to main menu (3)?\n";
+  print "Would you like to Square root (1), find a number's nth power (2), Cube Root (3), or Quit to main menu (4)?\n";
   my $ExMenu = <>;
   chomp $ExMenu;
   if ($ExMenu == 1) {
@@ -146,7 +159,9 @@ sub ExponentMenu {
   } elsif ($ExMenu == 2) {
    &Exponent;
   } elsif ($ExMenu == 3) {
-   &End
+   &Cbrt;
+  } elsif ($ExMenu == 4) {
+   &End;
   } else {
    print "That is not an option.\n";
    system("pause");
@@ -159,7 +174,7 @@ sub ExponentMenu {
 sub Main {
  system("cls");
  print "Welcome to Simple Text-Based Calculator, or the SiTe BaCal\n";
- print "Version 1.6.3\n";
+ print "Version 1.7.0\n";
  print "Do you wish to do Basic Math (1), Exponetry (2), or  Quit (3)?\n";
  my $MenuChoice = <>;
  chomp $MenuChoice;
