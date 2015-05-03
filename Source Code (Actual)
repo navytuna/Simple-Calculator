@@ -96,7 +96,7 @@ sub Exponent {
   if ($Number1 >= 1) {
   my $Answer = sqrt$Number1;
   chomp $Answer;
-  print "The square route of $Number1 = $Answer\n";
+  print "The square root of $Number1 = $Answer\n";
  } else {
   print "Err 01: The input needs to be greater then or equal to 1 and numeric in value\n";
  }
@@ -175,7 +175,7 @@ sub ExponentMenu {
 sub Main {
  system("cls");
  print "Welcome to Simple Text-Based Calculator, or the SiTe BaCal\n";
- print "Version 1.7.3\n";
+ print "Version 1.7.4\n";
  print "Do you wish to do Basic Math (1), Exponetry (2), or  Quit (3)?\n";
  my $MenuChoice = <>;
  chomp $MenuChoice;
