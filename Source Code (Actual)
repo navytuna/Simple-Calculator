@@ -10,7 +10,7 @@ sub Disclaimer {
  print "This program is free software: you can redistribute it and/or modify\n";
  print "it under the terms of the GNU General Public License as published by\n";
  print "the Free Software Foundation, either version 3 of the License, or\n";
- print "(at your option) any later version.\n";
+ print "any later version.\n";
  print "\n";
  print "This program is distributed in the hope that it will be useful,\n";
  print "but WITHOUT ANY WARRANTY; without even the implied warranty of\n";
