@@ -1,4 +1,4 @@
-# Simple Calculator
+#Simple Calculator
 This is a repository containing my simple calculator
 
 ## Comments/Concerns
