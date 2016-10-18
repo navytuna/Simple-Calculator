@@ -1,0 +1,200 @@
+# "!/usr/bin/perl
+use strict;
+use warnings;
+
+sub Disclaimer {
+ system("cls");
+ print "\n";
+ print "Simple Text Based calculator is a simple PERL Calculator\n";
+ print "Copyright (C) 2015  Charles Hildebrandt\n";
+ print "This program is free software: you can redistribute it and/or modify\n";
+ print "it under the terms of the GNU General Public License as published by\n";
+ print "the Free Software Foundation, either version 3 of the License, or\n";
+ print "any later version.\n";
+ print "\n";
+ print "This program is distributed in the hope that it will be useful,\n";
+ print "but WITHOUT ANY WARRANTY; without even the implied warranty of\n";
+ print "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n";
+ print "GNU General Public License for more details.\n";
+ print "\n";
+ print "You should have received a copy of the GNU General Public License\n";
+ print "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n";
+ system("Pause");
+ &Main;
+}
+
+
+
+
+ sub Add {
+  print "Input first number\n";
+  my $Number1 = <>;
+  chomp $Number1;
+  print "Input second number\n";
+  my $Number2 = <>;
+  chomp $Number2;
+  my $Answer = $Number1 + $Number2;
+  chomp $Answer;
+  print "$Number1 + $Number2 = $Answer\n";
+ }
+
+
+sub Multiply {
+  print "Input first number\n";
+  my $Number1 = <>;
+  chomp $Number1;
+  print "Input second number\n";
+  my $Number2 = <>;
+  chomp $Number2;
+  my $Answer = $Number1 * $Number2;
+  chomp $Answer;
+  print "$Number1 * $Number2 = $Answer\n";
+ }
+ 
+ sub Divide {
+  print "Input first number\n";
+  my $Number1 = <>;
+  chomp $Number1;
+  print "Input second number\n";
+  my $Number2 = <>;
+  chomp $Number2;
+  if ($Number2 == 0) {
+   print "Err 01: Divide by zero\n"
+  } else {
+  my $Answer = $Number1 / $Number2;
+  chomp $Answer;
+  print "$Number1 / $Number2 = $Answer\n";
+ }
+}
+
+sub Subtract {
+  print "Input first number\n";
+  my $Number1 = <>;
+  chomp $Number1;
+  print "Input second number\n";
+  my $Number2 = <>;
+  chomp $Number2;
+  my $Answer = $Number1 - $Number2;
+  chomp $Answer;
+  print "$Number1 - $Number2 = $Answer\n";
+ }
+
+sub Exponent {
+  system("cls");
+  print "Input number\n";
+  my $Number1 = <>;
+  chomp $Number1;
+  print "Input power\n";
+  my $Power = <>;
+  chomp $Power;
+  my $Answer = $Number1 ** $Power;
+  chomp $Answer;
+  print "$Number1 to the power of $Power = $Answer\n";
+  system("pause");
+  &ExponentMenu;
+ }
+ sub Sqrt {
+  system("cls");
+  print "Input number\n";
+  my $Number1 = <>;
+  chomp $Number1;
+  if ($Number1 >= 1) {
+  my $Answer = sqrt$Number1;
+  chomp $Answer;
+  print "The square root of $Number1 = $Answer\n";
+ } else {
+  print "Err 01: The input needs to be greater then or equal to 1 and numeric in value\n";
+ }
+  system("pause");
+  &ExponentMenu;
+ }
+ 
+ sub Cbrt {
+  system("cls");
+  print "Input number\n";
+  my $Number1 = <>;
+  chomp $Number1;
+  if ($Number1 >= 1) {
+   my $Answer = $Number1 ** (1/3);
+  chomp $Answer;
+  print "The cube root of $Number1 = $Answer\n"; 
+ } else {
+  print "Err 01: The input needs to be greater then or equal to 1 and numeric in value\n";
+ }
+ system("pause");
+ &ExponentMenu;
+}
+ sub End {
+  &Main;
+ }
+ 
+sub Basic {
+ system("cls");
+for ( ; ; ) {
+ print "Would you want to Add (1), Subtract (2), Multiply (3), Divide (4), or quit to main menu (5)?\n";
+ my $Choice = <>;
+ chomp $Choice;
+ if ($Choice == 1) {
+   &Add;
+  } elsif ($Choice == 2) {
+   &Subtract;
+  } elsif ($Choice == 3) {
+   &Multiply;
+  } elsif ($Choice == 4) {
+   &Divide;
+  } elsif ($Choice == 5) {
+   &Main;
+  } else {
+   print "That is not a choice.\n";
+ }
+ system("pause");
+ system("cls");
+}
+}
+
+
+
+sub ExponentMenu {
+ system("cls");
+ for( ; ; ) {
+  print "Would you like to Square root (1), find a number's nth power (2), Cube Root (3), or Quit to main menu (4)?\n";
+  my $ExMenu = <>;
+  chomp $ExMenu;
+  if ($ExMenu == 1) {
+   &Sqrt;
+  } elsif ($ExMenu == 2) {
+   &Exponent;
+  } elsif ($ExMenu == 3) {
+   &Cbrt;
+  } elsif ($ExMenu == 4) {
+   &End;
+  } else {
+   print "That is not an option.\n";
+   system("pause");
+   system("cls");
+}
+}
+}
+
+
+sub Main {
+ system("cls");
+ print "Welcome to Simple Text-Based Calculator, or the SiTe BaCal\n";
+ print "Version 1.8.0\n";
+ print "Do you wish to do Basic Math (1), Exponetry (2), View the Disclaimer (3), or  Quit (4)?\n";
+ my $MenuChoice = <>;
+ chomp $MenuChoice;
+ if ($MenuChoice == 1) {
+  &Basic;
+  } elsif ($MenuChoice == 2) {
+   &ExponentMenu;
+  } elsif ($MenuChoice == 3) {
+   &Disclaimer;
+  } elsif ($MenuChoice == 4) {
+   exit;
+ } else {
+  print "That is not an option.\n";
+ }
+}
+system("title Simple Perl Calculator");
+&Main;
